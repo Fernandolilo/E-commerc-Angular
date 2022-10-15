@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CredenciaisDTO } from 'src/app/models/CredencialDTO';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -17,7 +18,11 @@ export class LoginComponent implements OnInit {
   };
 
 
-  constructor(public auth: AuthService) {}
+  constructor(
+    private auth: AuthService,
+    private route: Router,
+    private activationRoute: ActivatedRoute
+    ) {}
 
   ngOnInit(): void {}
 
@@ -26,6 +31,9 @@ export class LoginComponent implements OnInit {
     this.auth.authenticated(this.creds)
     .subscribe(response =>{
       console.log(response.headers.get('Authorization'));
+      this.route.navigate(['home'], {relativeTo: this.activationRoute});
+
+
     }, error =>{
       console.log(error);
     })

@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthService } from './services/auth.service';
 import { AppMaterialModule } from './shared/material/App-material.module';
 
 
@@ -18,6 +19,7 @@ import { AppMaterialModule } from './shared/material/App-material.module';
 
   ],
   providers: [
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

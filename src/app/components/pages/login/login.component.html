@@ -1,20 +1,19 @@
-
 <body class="body">
-  <mat-card>
-    <form class="form">
+
+  <form class="form">
 
 
-        <input [(ngModel)]="creds.email" name="email" id="email" type="email" placeholder="Ex. email@example.com">
-        <br>
+    <input [(ngModel)]="creds.email" name="email" id="email" type="email" placeholder="Ex. email@example.com">
+    <br>
 
-        <input [(ngModel)]="creds.senha" name="senha" id="senha" type="password" placeholder="Senha">
+    <input [(ngModel)]="creds.senha" name="senha" id="senha" type="password" placeholder="Senha">
 
-    </form>
+  </form>
 
-    <button (click)="login()" mat-raised-button color="primary">Entrar</button>
-    <button mat-raised-button>Esqueci Senha/email</button>
-    <button mat-raised-button>Novo cadastro</button>
-  </mat-card>
+  <button (click)="login()" mat-raised-button  class="entrar">Entrar</button>
+  <button mat-raised-button>Esqueci Senha/email</button>
+  <button mat-raised-button>Novo cadastro</button>
+
 </body>
 
 <footer class="footer">
@@ -22,5 +21,3 @@
   <p>Contatos: Email: nando.systempro@hotmail.com</p>
   <p>Cel.: (11) 97771-2030</p>
 </footer>
-
-

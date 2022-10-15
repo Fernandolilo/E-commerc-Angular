@@ -1,41 +1,39 @@
 .body{
+
   text-align: center;
-  border-radius: 12px;
+  border-radius: 35px;
   justify-content: center;
   align-items: center;
   width: 100%;
-
-}
-
-mat-card{
-  background-color: rgba(0, 0, 0, 0.888);
-  justify-content: center;
-  align-items: center;
-  width: 85%;
-  display: inline-block;
-  border-radius: 12px;
 }
 
 input{
   background-color: rgb(247, 244, 246);
-  color: rgb(19, 18, 18);
+  color: rgb(70, 6, 100);
   border-radius: 19px;
   width: 75%;
-  padding: 0.7em;
-  margin-bottom: 1em;
+  padding: 0.5em;
+  margin-bottom: 0.5em;
+  margin-top: 1px;
 }
 
 button{
   width: 55%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
   border-radius: 19px;
   padding: 0.1em;
+  color:  rgb(70, 6, 100);
 }
-
+.entrar{
+  background-color: rgb(70, 6, 100);
+  color: white;
+}
 .footer{
+  bottom: 0;
+  position: fixed;
   text-align: center;
-  position: relative;
-  bottom: 0%;
+  width: 100%;
+  color:  rgb(70, 6, 100);
 }

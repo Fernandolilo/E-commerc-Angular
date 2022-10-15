@@ -1,3 +1,4 @@
+import { HomeComponent } from './../../components/pages/home/home.component';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
@@ -12,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     LoginComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,

@@ -1,20 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { CredenciaisDTO } from 'src/app/models/CredencialDTO';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 
 
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  creds: CredenciaisDTO = {
+    email: '',
+    senha: '',
+  };
 
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  login() {
+    console.log(this.creds);
+
   }
-
 }

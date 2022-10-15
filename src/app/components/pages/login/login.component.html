@@ -1,20 +1,23 @@
 
 <body class="body">
   <mat-card>
-    <form class="formu">
-      <mat-form-field class="email" appearance="fill">
-        <mat-label>Email</mat-label>
-        <input type="email" placeholder="Ex. email@example.com">
+    <form class="form">
+
+
+        <input [(ngModel)]="creds.email" name="email" id="email" type="email" placeholder="Ex. email@example.com">
         <br>
-        <br>
-        <input type="password" placeholder="Senha">
-      </mat-form-field>
+
+        <input [(ngModel)]="creds.senha" name="senha" id="senha" type="password" placeholder="Senha">
+
     </form>
 
-    <button mat-raised-button color="primary">Entrar</button>
+    <button (click)="login()" mat-raised-button color="primary">Entrar</button>
     <button mat-raised-button>Esqueci Senha/email</button>
+    <button mat-raised-button>Novo cadastro</button>
   </mat-card>
 </body>
+
+
 <footer class="footer">
   <h3>SystemPro uma empresa de excelência</h3>
   <p>Contatos: Email: nando.systempro@hotmail.com</p>

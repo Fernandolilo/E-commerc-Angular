@@ -1,5 +1,3 @@
 export const API_CONFIG ={
-  baseUrl: "",
-  bucketBaseUrl: ""
-
+  baseUrl: "http://localhost:8080",
 }

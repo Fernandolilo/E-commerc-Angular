@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-
   creds: CredenciaisDTO = {
     email: '',
     senha: '',
@@ -32,8 +31,6 @@ export class LoginComponent implements OnInit {
     .subscribe(response =>{
       console.log(response.headers.get('Authorization'));
       this.route.navigate(['home'], {relativeTo: this.activationRoute});
-
-
     }, error =>{
       console.log(error);
     })

@@ -1,0 +1,24 @@
+<div *ngFor="let item of itemCat" class="body">
+  <mat-card>
+    <mat-card-title> {{ item.nome }}</mat-card-title>
+    <button>
+      <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    </button>
+
+  </mat-card>
+  <mat-card-title-group>
+    <mat-card-actions>
+      <button mat-mini-fab class="adicionar" aria-label="Adicionar categoria">
+        <mat-icon (click)="onAdd()"> add_circle </mat-icon>
+      </button>
+      <button mat-icon-button class="editar" aria-label="Editar categoria">
+        <mat-icon> edit </mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn" aria-label="Remover categoria">
+        <mat-icon> del </mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card-title-group>
+
+</div>

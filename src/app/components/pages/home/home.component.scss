@@ -1,8 +1,8 @@
 
 mat-card{
-  width: 100%;
+  width: 40%;
   text-align: left;
-  align-items: baseline;
+  align-items: center;
   border-radius: 20px;
 
 }
@@ -11,7 +11,7 @@ mat-toolbar{
   background-color: rgb(70, 6, 100);
   border-radius: 10px;
   color: white;
-
+  width: 100%;
 
 }
 
@@ -20,6 +20,6 @@ button{
   background-color: rgb(70, 6, 100);
   color: white;
   text-align: left;
-  align-items: baseline;
-  width: 90%;
+  align-items: center;
+  width: 100%;
 }

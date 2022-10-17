@@ -9,8 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   constructor(
-    public route: Router,
-    public activationRoute: ActivatedRoute
+    private route: Router,
+    private activationRoute: ActivatedRoute
     ) { }
 
   ngOnInit(): void {

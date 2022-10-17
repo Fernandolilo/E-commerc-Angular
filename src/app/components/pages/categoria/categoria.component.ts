@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { CategoriaDTO } from 'src/app/models/categoriaDTO';
 import { CategoriaService } from 'src/app/services/categoria.service';
 
@@ -13,7 +14,10 @@ export class CategoriaComponent implements OnInit {
 
   readonly displayedColumns = ['nome', 'actions'];
 
-  constructor(private categoriaService: CategoriaService) {
+  constructor(
+    private categoriaService: CategoriaService,
+    private route: Router,
+    private activationRoute: ActivatedRoute) {
 
   }
 
@@ -28,6 +32,7 @@ export class CategoriaComponent implements OnInit {
   }
 
   onAdd(){
+    this.route.navigate(['newcategoria'], {relativeTo: this.activationRoute});
   }
 
   onEdit(){

@@ -10,8 +10,8 @@
 
   </form>
 
-  <button (click)="login()" mat-raised-button  class="entrar">Entrar</button>
-  <button mat-raised-button>Esqueci Senha/email</button>
+  <button disabled="true" *ngIf="creds.email && creds.senha !null" disabled="false"  (click)="login()" mat-raised-button  class="entrar">Entrar</button>
+  <button  mat-raised-button>Esqueci Senha/email</button>
   <button mat-raised-button>Novo cadastro</button>
 
 </body>

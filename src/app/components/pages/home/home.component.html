@@ -1,16 +1,22 @@
 
-   <mat-card>
-    <span>Navegue</span>
-    <menu>
-      <br>
-      <button mat-menu-item (click)="onCategoria()">Catalogo de Produtos</button>
-      <br>
-      <button mat-menu-item> Carrinho de compras</button>
-      <br>
-      <button mat-menu-item> Pedidos</button>
-      <br>
-      <button mat-menu-item> Pagamentos </button>
-      <br>
-      <button mat-menu-item> Meus dados</button>
-    </menu>
-   </mat-card>
+
+<div>
+  <h2> Bem vido! </h2>
+</div>
+
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="onCategoria()">Catalogo de Produtos</button>
+
+    <button mat-menu-item> Carrinho de compras</button>
+
+    <button mat-menu-item> Pedidos</button>
+
+    <button mat-menu-item> Pagamentos </button>
+
+    <button mat-menu-item> Meus dados</button>
+</mat-menu>
+
+
+
+

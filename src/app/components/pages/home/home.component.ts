@@ -8,6 +8,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+
+  public btn: boolean = true;
   constructor(
     private route: Router,
     private activationRoute: ActivatedRoute

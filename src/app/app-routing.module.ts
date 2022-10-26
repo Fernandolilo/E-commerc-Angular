@@ -7,7 +7,7 @@ const routes: Routes = [
     path: 'login',
     loadChildren: () =>
       import('./shared/path/path.module').then((m) => m.PathModule),
-  },
+  }
 ];
 
 @NgModule({

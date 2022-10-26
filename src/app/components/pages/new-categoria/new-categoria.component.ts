@@ -3,7 +3,7 @@ import { FormControl, NonNullableFormBuilder } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriaService } from 'src/app/services/categoria.service';
-
+import { Location } from '@angular/common';
 import { CategoriaDTO } from './../../../models/categoriaDTO';
 
 @Component({
@@ -27,6 +27,7 @@ export class NewCategoriaComponent implements OnInit {
     private service: CategoriaService,
     private snackBar: MatSnackBar,
     private route: Router,
+    private location: Location,
     private activationRoute: ActivatedRoute
   ) {}
 
@@ -40,6 +41,8 @@ export class NewCategoriaComponent implements OnInit {
 
   private onSucess() {
     this.snackBar.open('Salvo com Sucesso!', '', { duration: 1500 });
+    this.location.back();
+
   }
   private onError() {
     this.snackBar.open('Erro ao salvar categoria', '', { duration: 3000 });
@@ -49,7 +52,10 @@ export class NewCategoriaComponent implements OnInit {
     this.service.create(this.formulario.value).subscribe(
       next =>{
         this.onSucess();
+      }, error =>{
+        this.onError();
       }
+
     )
   }
 

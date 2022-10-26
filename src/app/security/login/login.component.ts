@@ -12,8 +12,6 @@ import { AuthService } from "src/app/services/auth.service";
 })
 export class LoginComponent implements OnInit {
 
-  isSuccessful = false;
-  isSignUpFailed = false;
   creds: CredenciaisDTO = {
     email: '',
     senha: '',
@@ -34,8 +32,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.authenticate(this.creds)
     .subscribe(response => {
+      this.toast.success("Login efetuado com sucesso!")
       this.route.navigate(['home'], {relativeTo: this.activationRoute});
-      },
-    error => {});
+      }, error =>{
+        this.toast.error(error);
+      });
   }
 }

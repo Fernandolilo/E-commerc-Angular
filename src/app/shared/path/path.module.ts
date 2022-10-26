@@ -6,12 +6,12 @@ import { CategoriaComponent } from 'src/app/components/pages/categoria/categoria
 import { NewCategoriaComponent } from 'src/app/components/pages/new-categoria/new-categoria.component';
 import { LoginComponent } from 'src/app/security/login/login.component';
 import { AuthService } from 'src/app/services/auth.service';
-
 import { CategoriaService } from 'src/app/services/categoria.service';
 
 import { AppMaterialModule } from '../material/App-material.module';
 import { HomeComponent } from './../../components/pages/home/home.component';
 import { PathRoutingModule } from './path-routing.module';
+
 
 
 
@@ -29,13 +29,15 @@ import { PathRoutingModule } from './path-routing.module';
     PathRoutingModule,
     AppMaterialModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+
   ],
 
   providers: [
     AuthService,
-    CategoriaService
-  ]
+    CategoriaService,
+
+  ],
 
 })
 export class PathModule { }

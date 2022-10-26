@@ -1,8 +1,8 @@
+import { API_CONFIG } from './../config/API_CONFIG';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, Observable } from 'rxjs';
 
-import { API_CONFIG } from '../config/API_CONFIG';
 import { CategoriaDTO } from '../models/categoriaDTO';
 
 
@@ -12,7 +12,7 @@ import { CategoriaDTO } from '../models/categoriaDTO';
 export class CategoriaService {
   constructor(private http: HttpClient) {}
 
-  private api = API_CONFIG;
+  readonly PROXY_CONFIG = 'api-gateway';
 
   findAll(): Observable<CategoriaDTO[]> {
     return this.http
@@ -24,7 +24,6 @@ export class CategoriaService {
       return this.http.post(`${API_CONFIG.baseUrl}/categorias`, categoria,{
         observe: 'response',
         responseType: 'text'
-    })
-
+    });
   }
 }

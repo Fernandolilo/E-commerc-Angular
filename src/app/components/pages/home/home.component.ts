@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   onCategoria(){
-    this.route.navigate(['categoria'], {relativeTo: this.activationRoute});
+    this.route.navigate(['categorias'], {relativeTo: this.activationRoute});
   }
 
 }

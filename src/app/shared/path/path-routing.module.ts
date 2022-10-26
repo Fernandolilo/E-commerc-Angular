@@ -1,3 +1,4 @@
+import { CategoriaResolver } from './../../components/pages/categoria/categoria.resolver';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CategoriaComponent } from 'src/app/components/pages/categoria/categoria.component';
@@ -9,8 +10,9 @@ import { HomeComponent } from './../../components/pages/home/home.component';
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'home', component: HomeComponent },
-  { path: 'home/categoria', component: CategoriaComponent },
-  { path: 'home/categoria/newcategoria', component: NewCategoriaComponent },
+  { path: 'home/categorias', component: CategoriaComponent },
+  { path: 'home/categorias/newcategoria', component: NewCategoriaComponent, resolve: {categoria: CategoriaResolver} },
+  { path: 'home/categorias/edit/:id', component: NewCategoriaComponent, resolve: {categoria: CategoriaResolver} }
 ];
 
 @NgModule({

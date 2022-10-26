@@ -1,9 +1,11 @@
+import { CategoriaResolver } from './../../components/pages/categoria/categoria.resolver';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { CategoriaComponent } from 'src/app/components/pages/categoria/categoria.component';
 import { NewCategoriaComponent } from 'src/app/components/pages/new-categoria/new-categoria.component';
+import { AuthInterceptor } from 'src/app/security/login/auth.interceptor';
 import { LoginComponent } from 'src/app/security/login/login.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { CategoriaService } from 'src/app/services/categoria.service';
@@ -21,7 +23,8 @@ import { PathRoutingModule } from './path-routing.module';
     LoginComponent,
     HomeComponent,
     CategoriaComponent,
-    NewCategoriaComponent
+    NewCategoriaComponent,
+
 
   ],
   imports: [
@@ -31,12 +34,18 @@ import { PathRoutingModule } from './path-routing.module';
     HttpClientModule,
     MatIconModule,
 
+
   ],
 
   providers: [
     AuthService,
     CategoriaService,
-
+    {
+      provide: AuthInterceptor,
+      useClass: AuthInterceptor,
+      multi: true
+    },
+    CategoriaResolver
   ],
 
 })

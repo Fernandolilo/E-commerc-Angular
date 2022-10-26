@@ -35,8 +35,8 @@ export class CategoriaComponent implements OnInit {
     this.route.navigate(['newcategoria'], {relativeTo: this.activationRoute});
   }
 
-  onEdit(){
-
+  onEdit(categoria: CategoriaDTO){
+    this.route.navigate(['edit', categoria.id], {relativeTo: this.activationRoute});
   }
 
   onDelete(){

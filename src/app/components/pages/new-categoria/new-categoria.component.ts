@@ -14,6 +14,7 @@ import { CategoriaDTO } from './../../../models/categoriaDTO';
 export class NewCategoriaComponent implements OnInit {
 
   formulario = this.formBuilder.group({
+      id: [''],
       nome: ['']
   })
 
@@ -34,6 +35,7 @@ export class NewCategoriaComponent implements OnInit {
   ngOnInit(): void {
     const categoria: CategoriaDTO = this.activationRoute.snapshot.data['categoria']
     this.formulario.setValue({
+      id: categoria.id,
       nome: categoria.nome
     })
   }

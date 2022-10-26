@@ -5,7 +5,6 @@ import { first, Observable } from 'rxjs';
 
 import { CategoriaDTO } from '../models/categoriaDTO';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -20,10 +19,28 @@ export class CategoriaService {
       .pipe(first());
   }
 
-  create(categoria: Partial<CategoriaDTO>){
-      return this.http.post(`${API_CONFIG.baseUrl}/categorias`, categoria,{
-        observe: 'response',
-        responseType: 'text'
-    });
+  create(categoria: Partial<CategoriaDTO>) {
+    if (categoria.id) {
+      console.log(categoria);
+      return this.update(categoria);
+
+    }
+    return this.save(categoria);
+  }
+
+  findById(id: string) {
+    return this.http.get<CategoriaDTO>(`${API_CONFIG.baseUrl}/categorias/${id}`);
+  }
+
+  private save(categoria: Partial<CategoriaDTO>) {
+    return this.http.post(`${API_CONFIG.baseUrl}/categorias`, categoria).pipe(first())
+  }
+
+  private update(categoria: Partial<CategoriaDTO>) {
+    return this.http.put<CategoriaDTO>(
+      `${API_CONFIG.baseUrl}/categorias/${categoria.id}`,
+      categoria
+
+    );
   }
 }

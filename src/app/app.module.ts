@@ -9,14 +9,10 @@ import { AuthService } from './services/auth.service';
 import { CategoriaService } from './services/categoria.service';
 import { AppMaterialModule } from './shared/material/App-material.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
-  imports:
-  [ BrowserModule,
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
     AppRoutingModule,
     AppMaterialModule,
     BrowserAnimationsModule,
@@ -25,10 +21,9 @@ import { AppMaterialModule } from './shared/material/App-material.module';
   providers: [
     AuthService,
     CategoriaService,
+
   ],
 
-  bootstrap: [
-    AppComponent
-  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

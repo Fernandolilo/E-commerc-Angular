@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router, ActivatedRoute } from "@angular/router";
 import { ToastrService } from "ngx-toastr";
 import { CredenciaisDTO } from "src/app/models/CredencialDTO";
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private route: Router,
     private activationRoute: ActivatedRoute,
-    private toast: ToastrService
+    private snackBar: MatSnackBar,
     ) {}
 
   ngOnInit(): void {
@@ -32,10 +33,10 @@ export class LoginComponent implements OnInit {
   login() {
     this.auth.authenticate(this.creds)
     .subscribe(response => {
-      this.toast.success("Login efetuado com sucesso!")
+      this.snackBar.open('Login efetuado com Sucesso!', '', { duration: 1500 });
       this.route.navigate(['home'], {relativeTo: this.activationRoute});
       }, error =>{
-        this.toast.error(error);
+        this.snackBar.open("Email ou senha Inválido",'', { duration: 1500 });
       });
   }
 }

@@ -1,5 +1,5 @@
 
-<header>
+<header aria-label="Adicionar categoria">
   <h3>Nova Categoria</h3>
   <button mat-mini-fab class="adicionar" aria-label="Adicionar categoria">
     <mat-icon (click)="onAdd()"> add_circle </mat-icon>
@@ -19,8 +19,8 @@
   <mat-card-title-group>
     <mat-card-actions>
 
-      <button mat-icon-button class="editar" aria-label="Editar categoria">
-        <mat-icon> edit </mat-icon>
+      <button mat-icon-button class="edit" aria-label="Editar categoria">
+        <mat-icon (click)="onEdit(item)"> Editar </mat-icon>
       </button>
 
       <button mat-icon-button color="warn" aria-label="Remover categoria">

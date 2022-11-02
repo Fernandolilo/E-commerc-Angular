@@ -1,6 +1,5 @@
-
 <header aria-label="Adicionar categoria">
-  <h3>Nova Categoria</h3>
+  <h1 >Nova Categoria</h1>
   <button mat-mini-fab class="adicionar" aria-label="Adicionar categoria">
     <mat-icon (click)="onAdd()"> add_circle </mat-icon>
   </button>
@@ -8,25 +7,17 @@
 <br>
 
 <div *ngFor="let item of itemCat" class="body">
-
   <mat-card>
     <mat-card-title> {{ item.nome }}</mat-card-title>
-    <button>
-      <img mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+    <button class="bimg">
+      <img class="img" mat-card-md-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+    </button>
+    <button mat-icon-button class="edit" aria-label="Editar categoria">
+      <mat-icon (click)="onEdit(item)"> Edit </mat-icon>
     </button>
 
+    <button mat-icon-button color="warn" aria-label="Remover categoria">
+      <mat-icon (click)="onDelete(item)"> del </mat-icon>
+    </button>
   </mat-card>
-  <mat-card-title-group>
-    <mat-card-actions>
-
-      <button mat-icon-button class="edit" aria-label="Editar categoria">
-        <mat-icon (click)="onEdit(item)"> Editar </mat-icon>
-      </button>
-
-      <button mat-icon-button color="warn" aria-label="Remover categoria">
-        <mat-icon> del </mat-icon>
-      </button>
-    </mat-card-actions>
-  </mat-card-title-group>
-
 </div>

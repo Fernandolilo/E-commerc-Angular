@@ -13,7 +13,7 @@ export class AuthService {
   authenticate(creds: CredenciaisDTO): Observable<any> {
     return this.http.post(`${API_CONFIG.baseUrl}/login`, creds, {
       observe: 'response',
-      responseType: 'json',
+      responseType: 'json'
     }).pipe(map((data) => this.setTokenLocalStorage(data)),
     catchError((error) => {
       this.removeTokenLocalStorage();
@@ -23,12 +23,15 @@ export class AuthService {
 
   public getToken(): string | null{
       return localStorage.getItem(API_CONFIG.token);
+
   }
 
 
   private setTokenLocalStorage(response: any){
-      const {type, token, } = response;
+      const {token} = response;
       localStorage.setItem(API_CONFIG.token, token);
+      localStorage.key(token);
+      console.log(token)
   }
 
   private removeTokenLocalStorage(): void{

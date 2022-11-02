@@ -11,8 +11,6 @@ import { CategoriaDTO } from '../models/categoriaDTO';
 export class CategoriaService {
   constructor(private http: HttpClient) {}
 
-  readonly PROXY_CONFIG = 'api-gateway';
-
   findAll(): Observable<CategoriaDTO[]> {
     return this.http
       .get<CategoriaDTO[]>(`${API_CONFIG.baseUrl}/categorias`)
@@ -23,24 +21,34 @@ export class CategoriaService {
     if (categoria.id) {
       console.log(categoria);
       return this.update(categoria);
-
     }
     return this.save(categoria);
   }
 
   findById(id: string) {
-    return this.http.get<CategoriaDTO>(`${API_CONFIG.baseUrl}/categorias/${id}`);
+    return this.http.get<CategoriaDTO>(
+      `${API_CONFIG.baseUrl}/categorias/${id}`
+    );
   }
 
   private save(categoria: Partial<CategoriaDTO>) {
-    return this.http.post(`${API_CONFIG.baseUrl}/categorias`, categoria).pipe(first())
+    return this.http
+      .post(`${API_CONFIG.baseUrl}/categorias`, categoria)
+      .pipe(first());
   }
 
   private update(categoria: Partial<CategoriaDTO>) {
     return this.http.put<CategoriaDTO>(
       `${API_CONFIG.baseUrl}/categorias/${categoria.id}`,
       categoria
-
     );
+  }
+
+  public delete(categoria: Partial<CategoriaDTO>) {
+     return this.http.delete<CategoriaDTO>(
+        `${API_CONFIG.baseUrl}/categorias/${categoria.id}`
+      ).pipe(
+        first()
+      );
   }
 }

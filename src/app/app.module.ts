@@ -21,7 +21,6 @@ import { AppMaterialModule } from './shared/material/App-material.module';
   providers: [
     AuthService,
     CategoriaService,
-
   ],
 
   bootstrap: [AppComponent],

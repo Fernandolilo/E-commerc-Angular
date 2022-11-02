@@ -9,7 +9,6 @@ import { CategoriaService } from 'src/app/services/categoria.service';
   styleUrls: ['./categoria.component.scss'],
 })
 export class CategoriaComponent implements OnInit {
-
   itemCat: CategoriaDTO[] = [];
 
   readonly displayedColumns = ['nome', 'actions'];
@@ -17,31 +16,30 @@ export class CategoriaComponent implements OnInit {
   constructor(
     private categoriaService: CategoriaService,
     private route: Router,
-    private activationRoute: ActivatedRoute) {
-
-  }
+    private activationRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.categoriaService.findAll()
-      .subscribe(response => {
+    this.categoriaService.findAll().subscribe(
+      (response) => {
         this.itemCat = response;
-
       },
-      error => {});
-
+      (error) => {}
+    );
   }
 
-  onAdd(){
-    this.route.navigate(['newcategoria'], {relativeTo: this.activationRoute});
+  onAdd() {
+    this.route.navigate(['newcategoria'], { relativeTo: this.activationRoute });
   }
 
-  onEdit(categoria: CategoriaDTO){
-    this.route.navigate(['edit', categoria.id], {relativeTo: this.activationRoute});
+  onEdit(categoria: CategoriaDTO) {
+    this.route.navigate(['edit', categoria.id], {
+      relativeTo: this.activationRoute,
+    });
   }
 
-  onDelete(){
+  onDelete(categoria: CategoriaDTO) {
+    this.route.navigate(['delete', categoria.id], {relativeTo: this.activationRoute});
 
   }
-
 }
-

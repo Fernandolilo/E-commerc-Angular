@@ -1,11 +1,24 @@
 
 mat-card{
-  width: 40%;
+  width: 90%;
   align-items: center;
-  background: rgba(132, 87, 236, 0.15);
+  //background: rgba(132, 87, 236, 0.15);
   border-radius: 14px;
+  margin-bottom: 0.5em;
+  color:  rgba(70, 6, 100, 0.664);
 }
 
+header{
+  color:  rgba(70, 6, 100, 0.664);
+}
+.img{
+  border-radius: 9px;
+}
+.bimg{
+  border-radius: 9px;
+  color:  rgb(70, 6, 100);
+
+}
 .adicionar{
   background-color: rgb(70, 6, 100);
   color: white;
@@ -18,5 +31,5 @@ mat-card{
 }
 .body{
   border-radius: 14px;
-
+  width: auto;
 }

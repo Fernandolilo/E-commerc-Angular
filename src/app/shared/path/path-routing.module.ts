@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'home/categorias', component: CategoriaComponent },
   { path: 'home/categorias/newcategoria', component: NewCategoriaComponent, resolve: {categoria: CategoriaResolver} },
-  { path: 'home/categorias/edit/:id', component: NewCategoriaComponent, resolve: {categoria: CategoriaResolver} }
+  { path: 'home/categorias/edit/:id', component: NewCategoriaComponent, resolve: {categoria: CategoriaResolver} },
+  { path: 'home/categorias/delete/:id', component: NewCategoriaComponent, resolve: {categoria: CategoriaResolver} },
 ];
 
 @NgModule({
